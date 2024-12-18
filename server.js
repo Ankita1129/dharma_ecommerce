@@ -24,15 +24,19 @@ connectDB();
 const app = express();
 
 // Middleware for CORS
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'https://dharma-1.onrender.com', // Replace with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  credentials: true, // Allow cookies and credentials
-}));
+const allowedOrigins = ['https://dharma-1.onrender.com', 'http://localhost:3000'];
 
-// Handle preflight requests (OPTIONS)
-app.options('*', cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 
 // Middleware
 app.use(express.json()); // Parse JSON payloads
