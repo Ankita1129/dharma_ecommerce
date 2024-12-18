@@ -15,7 +15,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("BACKEND_URL/api/v1/category/create-category", {
+      const { data } = await axios.post(`${process.env.BACKEND_URL}/api/v1/category/create-category`, {
         name,
       });
       if (data?.success) {
@@ -33,7 +33,7 @@ const CreateCategory = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("BACKEND_URL/api/v1/category/get-category");
+      const { data } = await axios.get(`${process.env.BACKEND_URL}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -52,7 +52,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `BACKEND_URL/api/v1/category/update-category/${selected._id}`,
+        `${process.env.BACKEND_URL}/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data?.success) {
@@ -72,7 +72,7 @@ const CreateCategory = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `BACKEND_URL/api/v1/category/delete-category/${pId}`
+        `${process.env.BACKEND_URL}/api/v1/category/delete-category/${pId}`
       );
       if (data.success) {
         toast.success(`category is deleted`);
