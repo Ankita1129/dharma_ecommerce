@@ -1,0 +1,44 @@
+.product-details {
+  margin-top: 30px !important;
+  padding-top: 80px !important;
+}
+
+.mddd{
+  width: 350px !important; 
+  height: 300px !important;
+} 
+
+.similar-products .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem; 
+}
+
+.similar-products .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.similar-products .card-price {
+  color: rgb(0, 67, 0);
+  font-weight: bold;
+}
+.similar-products button {
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.similar-products .card img:hover {
+  transform: scale(0.9);
+}
+
+.similar-products .card-img-top {
+  height: 300px !important;
+}
+
+.card-img-top{
+  height: 300px;
+  width: 350px;
+}
+
+

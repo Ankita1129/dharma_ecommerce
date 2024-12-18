@@ -1,0 +1,99 @@
+.tp {
+  padding-top: 20px;
+}
+
+.home-page h1 {
+  color: rgb(0, 0, 0);
+}
+
+.banner-img{
+  padding-top: 50px;
+}
+
+.bg{
+  background: url('/public/images/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-page .card {
+  background-color: rgba(255, 255, 255, 0.084);
+  width: 16rem;
+}
+.home-page .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-page .card-price {
+  color: rgb(0, 71, 44);
+  font-weight: bold;
+}
+.home-page button {
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.btn-dark {
+  background: black;
+}
+
+.home-page .card-text {
+  color: rgb(70, 70, 70);
+}
+
+.home-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.home-page .card-img-top {
+  height: 300px !important;
+  width: 300px !important;
+}
+/* ==================
+filters
+============== */
+.filters h6 {
+  color: rgb(0, 0, 0) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.337);
+  margin-top: 20px;
+}
+
+.ant-checkbox-wrapper:first-of-type {
+  margin-left: 10px;
+}
+
+.ant-checkbox-wrapper {
+  margin: 2px;
+}
+.ant-radio-wrapper {
+  margin-bottom: 5px !important;
+  margin-left: 10px;
+}
+
+.filters button {
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.loadmore {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px !important;
+}
+
+.fil {
+  font-weight: 400;
+  font-size: 18px;
+}
