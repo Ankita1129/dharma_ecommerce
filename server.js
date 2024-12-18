@@ -23,24 +23,28 @@ connectDB();
 // Initialize the Express app
 const app = express();
 
-// Middlewares
-// app.use(cors());
+// Middleware for CORS
 app.use(cors({
-  origin: 'https://dharma-1.onrender.com',
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
+  origin: process.env.CORS_ORIGIN || 'https://dharma-1.onrender.com', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Allow cookies and credentials
 }));
 
+// Handle preflight requests (OPTIONS)
+app.options('*', cors());
+
+// Middleware
 app.use(express.json()); // Parse JSON payloads
 app.use(morgan("dev")); // Log HTTP requests
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build"))); // Serve React app
 
 // Routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
-// Catch-all route to serve the React app
+// Catch-all route to serve React app
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
