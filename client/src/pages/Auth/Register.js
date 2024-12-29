@@ -29,7 +29,8 @@ const Register = () => {
         toast.success(res.data && res.data.message);
         navigate("/login");
       } else {
-        toast.error(res.data.message);
+        // toast.error(res.data.message);
+        toast.error("Something went wrong");
       }
     } catch (error) {
       console.log(error);
