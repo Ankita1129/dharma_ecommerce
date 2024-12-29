@@ -48,7 +48,7 @@ const CartPage = () => {
   // Get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("https://dharma-zf6s.onrender.com/api/v1/product/braintree/token");
+      const { data } = await axios.get(`${process.env.BACKEND_URL}/api/v1/product/braintree/token`);
       setClientToken(data?.clientToken);
     } catch (error) {
       //console.log(error);
@@ -64,7 +64,7 @@ const CartPage = () => {
     try {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
-      const { data } = await axios.post("https://dharma-zf6s.onrender.com/api/v1/product/braintree/payment", {
+      const { data } = await axios.post(`${process.env.BACKEND_URL}/api/v1/product/braintree/payment`, {
         nonce,
         cart,
       });
@@ -108,7 +108,7 @@ const CartPage = () => {
                 <div className="row card p-2 my-3 me-2 flex-row" key={p._id}>
                   <div className="col-md-4">
                     <img
-                      src={`https://dharma-zf6s.onrender.com/api/v1/product/product-photo/${p._id}`}
+                      src={`${process.env.BACKEND_URL}/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                     />
@@ -143,7 +143,7 @@ const CartPage = () => {
                   <h6>Current Address : {auth?.user?.address}</h6>
                   <button
                     className="btn btn-warning m-3"
-                    onClick={() => navigate("https://dharma-1.onrender.com/dashboard/user/profile")}
+                    onClick={() => navigate("/dashboard/user/profile")}
                   >
                     Update address
                   </button>
@@ -153,7 +153,7 @@ const CartPage = () => {
                   {auth?.token ? (
                     <button
                       className="btn btn-warning m-3"
-                      onClick={() => navigate("https://dharma-1.onrender.com/dashboard/user/profile")}
+                      onClick={() => navigate("/dashboard/user/profile")}
                     >
                       Update Address
                     </button>
