@@ -24,7 +24,7 @@ connectDB();
 const app = express();
 
 // Middleware for CORS
-const allowedOrigins = ['https://dharma-1.onrender.com'];
+const allowedOrigins = ['https://dharma-1.onrender.com', 'http://localhost:3000'];
 
 app.use(cors({
   origin: (origin, callback) => {
