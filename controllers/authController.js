@@ -48,7 +48,7 @@ export const registerController = async (req, res) => {
       answer,
     }).save();
     console.log("Saved");
-    res.status(200).send({
+    res.status(400).send({
       success: true,
       message: "User Register Successfully",
       user,
