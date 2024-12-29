@@ -31,7 +31,10 @@ const Register = () => {
         console.log(res);
       } else {
         // toast.error(res.data.message);
-        console.log(res.data);
+        
+        console.log(data);
+        console.log(res.name);
+        console.log(res.email);
         toast.error("Something went wrong");
       }
     } catch (error) {
