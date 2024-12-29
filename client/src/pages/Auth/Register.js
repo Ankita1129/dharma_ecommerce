@@ -32,7 +32,7 @@ const Register = () => {
       } else {
         // toast.error(res.data.message);
         
-        console.log(data);
+        // console.log(data);
         console.log(res.name);
         console.log(res.email);
         toast.error("Something went wrong");
