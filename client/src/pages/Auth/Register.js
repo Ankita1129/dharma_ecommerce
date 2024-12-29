@@ -31,7 +31,7 @@ const Register = () => {
         console.log(res);
       } else {
         // toast.error(res.data.message);
-        console.log(res);
+        console.log(res.data);
         toast.error("Something went wrong");
       }
     } catch (error) {
